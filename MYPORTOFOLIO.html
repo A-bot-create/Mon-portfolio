@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Ben Mathe – Portfolio</title>
+  <link rel="stylesheet" href="Style.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <!-- Burger à gauche -->
+    <button class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <div class="logo">BM🎓</div>
+
+    <!-- Menu latéral caché -->
+    <nav class="side-menu" id="sideMenu">
+      <a href="porto.html">Me🧔🏽</a>
+      <a href="Mescompetences.html">Mes Compétences💻</a>
+      <a href="Contacts.html">Contact📲</a>
+    </nav>
+
+    <!-- Overlay -->
+    <div class="overlay" id="overlay"></div>
+  </header>
+
+  <!-- Hero section -->
+  <section class="hero">
+    <div class="hero-content">
+      <h1>MY PORTOFOLIO<br>BEN MATHE</h1>
+      <p>Étudiant L1 LMD FASI - Logos, plaquettes, web site, Program</p>
+    </div>
+  </section>
+
+  <!-- Script pour menu burger -->
+  <script>
+    const burger = document.getElementById('burger');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+
+    burger.addEventListener('click', () => {
+      sideMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
+      burger.classList.toggle('open');
+    });
+
+    overlay.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      burger.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>

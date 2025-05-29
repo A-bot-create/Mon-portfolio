@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact - BM</title>
+  <link rel="stylesheet" href="Style2.css">
+</head>
+<body>
+  <header class="navbar">
+    <!-- Bouton burger à gauche -->
+    <button class="burger" id="burger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </button>
+
+    <!-- Logo -->
+    <div class="logo">BM 🎓</div>
+  </header>
+
+  <!-- Menu latéral -->
+  <nav class="side-menu" id="sideMenu">
+    <a href="MYPORTOFOLIO.html">Accueil🏠</a>
+    <a href="porto.html">Me 🧔🏽</a>
+    <a href="Contacts.html">Mes Compétences 💻</a>
+  </nav>
+
+  <!-- Overlay semi-transparent -->
+  <div class="overlay" id="overlay"></div>
+
+  <section id="contact">
+    <div class="title">Contact</div>
+    <p>Pour toute collaboration, question ou opportunité, voici comment me joindre :</p>
+    <ul>
+      <li><strong>Email :</strong> <a href="https://mail.google.com/mail/u/0/?tab=rm&ogbl#inbox">bm.benmate353@gmail.com</a></li>
+      <li><strong>Instagram :</strong> <a href="https://www.instagram.com/accounts/onetap/?next=%2F" target="_blank">@benmathe_7</a></li>
+      <li><strong>Twitter :</strong> <a href="https://x.com/home" target="_blank">@bm_tech</a></li>
+      <li><strong>WhatsApp :</strong> <a href="https://wa.me/243981291302" target="_blank">+243 981 291 302</a></li>
+      <li><strong>Discord :</strong> <a href="https://discord.com/channels/@me" target="_blank">Ben Mathe</a></li>
+      <li><strong>GitHub :</strong> <a href="https://github.com/A-bot-create?tab=overview&from=2025-04-01&to=2025-04-30" target="_blank">github.com/Alone</a></li>
+    </ul>
+  </section>
+
+  <!-- Script en bas -->
+  <script>
+    const burger = document.getElementById('burger');
+    const sideMenu = document.getElementById('sideMenu');
+    const overlay = document.getElementById('overlay');
+
+    burger.addEventListener('click', () => {
+      sideMenu.classList.toggle('active');
+      overlay.classList.toggle('active');
+      burger.classList.toggle('open');
+    });
+
+    overlay.addEventListener('click', () => {
+      sideMenu.classList.remove('active');
+      overlay.classList.remove('active');
+      burger.classList.remove('open');
+    });
+  </script>
+</body>
+</html>

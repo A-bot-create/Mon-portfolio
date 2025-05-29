@@ -1,0 +1,239 @@
+/* Style général */
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f6f8;
+  color: #1a1a1a;
+}
+
+header.navbar {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  background-color: #0d1117;
+  color: #f0f6fc;
+  padding: 20px 40px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+.logo {
+  font-weight: bold;
+  font-size: 22px;
+  color: #f0f6fc;
+  margin-left: 10px;
+}
+
+/* Bouton burger */
+.burger {
+  width: 30px;
+  height: 25px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  margin-left: 10px;
+  z-index: 1100;
+}
+
+.burger span {
+  height: 4px;
+  width: 100%;
+  background: #58a6ff;
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+.burger.open span:nth-child(1) {
+  transform: rotate(45deg) translate(5px, 5px);
+}
+
+.burger.open span:nth-child(2) {
+  opacity: 0;
+}
+
+.burger.open span:nth-child(3) {
+  transform: rotate(-45deg) translate(5px, -5px);
+}
+
+/* Menu latéral caché */
+.side-menu {
+  position: fixed;
+  top: 0;
+  left: -280px; /* caché hors écran */
+  width: 280px;
+  height: 100vh;
+  background-color: #161b22;
+  box-shadow: 2px 0 12px rgba(0, 0, 0, 0.7);
+  padding: 60px 20px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  transition: left 0.3s ease;
+  z-index: 1050;
+}
+
+.side-menu.active {
+  left: 0;
+}
+
+.side-menu a {
+  color: #58a6ff;
+  font-weight: bold;
+  text-decoration: none;
+  font-size: 1.2rem;
+  padding: 10px 0;
+  border-bottom: 1px solid #30363d;
+}
+
+.side-menu a:hover {
+  color: #a1cef4;
+}
+
+/* Overlay semi-transparent */
+.overlay {
+  position: fixed;
+  top: 0; left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(13, 17, 23, 0.7);
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.3s ease;
+  z-index: 1040;
+}
+
+.overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+/* Contenu principal */
+section, .title, ul, p {
+  padding-top: 80px; /* espace pour header fixe */
+}
+
+/* Styles initiaux conservés */
+
+header:not(.navbar) {
+  background-color: #0d1117;
+  color: #f0f6fc;
+  padding: 20px;
+  text-align: center;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+}
+
+header:not(.navbar) h1 {
+  margin: 0;
+  font-size: 2.2rem;
+}
+
+nav {
+  margin-top: 10px;
+}
+
+nav a {
+  color: #58a6ff;
+  text-decoration: none;
+  margin: 0 12px;
+  font-weight: bold;
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+section {
+  max-width: 800px;
+  margin: 40px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  font-size: 1.8rem;
+  color: #0d1117;
+  margin-bottom: 20px;
+  border-bottom: 2px solid #58a6ff;
+  padding-bottom: 10px;
+}
+
+/* Tableau pour page Me */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 20px;
+}
+
+table th,
+table td {
+  padding: 12px 15px;
+  border: 1px solid #d0d7de;
+  text-align: left;
+}
+
+table th {
+  background-color: #f0f6fc;
+  color: #0d1117;
+}
+
+/* Liste pour compétences et contact */
+ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+ul li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e1e4e8;
+  line-height: 1.6;
+}
+
+ul li:last-child {
+  border-bottom: none;
+}
+
+a {
+  color: #0969da;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive : cache nav classique sur petit écran */
+@media screen and (max-width: 768px) {
+  header:not(.navbar) nav {
+    display: none;
+  }
+}
+
+/* Responsive taille texte */
+@media screen and (max-width: 600px) {
+  body {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 1.5rem;
+  }
+
+  header:not(.navbar) h1 {
+    font-size: 1.6rem;
+  }
+
+  nav a {
+    display: block;
+    margin: 8px 0;
+  }
+}
